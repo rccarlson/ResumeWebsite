@@ -184,7 +184,7 @@ params:
         - "C#"
         - "F#"
         - "Sqlite"
-        - "Nginx"
+        - "Caddy"
         - "Proxmox"
         - "Linux Mint desktop"
         - "Ubuntu server"
