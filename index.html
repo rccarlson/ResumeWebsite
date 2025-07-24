@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riley Carlson - .NET Developer</title>
+    <link rel="icon" type="image/x-icon" href="static/fav.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(45deg, #1a202c, #2d3748, #1a202c, #2d3748);
+            background-size: 400%;
+            animation: gradientWave 15s ease infinite;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        @keyframes gradientWave {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .tab {
+            display: none;
+        }
+
+        .tab.active {
+            display: block;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .tab-button {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .tab-button:hover {
+            background-color: #4a5568;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Title Card with About Me -->
+    <header class="bg-gray-900 py-12">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-5xl font-extrabold text-white mb-4">Riley Carlson</h1>
+                <p class="text-2xl text-gray-400 mb-4">.NET Developer</p>
+                <p class="text-gray-300">As a dedicated .NET developer with a passion for desktop applications, I’ve
+                    spent years crafting software solutions that make life simpler and more convenient. I have been
+                    working for several years with enterprise desktop applications, where I’ve had the privilege of
+                    watching my code directly impact people’s daily workflows.</p>
+                <p class="text-gray-300 mt-4">Currently, I’m expanding my technical horizons through homelabbing, where
+                    I have learned a great deal about networking, server management, and container technologies. This
+                    website is being hosted from my homelab now! When I’m not working on production code or optimizing
+                    server configurations, you can find me exploring game development or experimenting with various
+                    Linux distributions and container orchestration tools.</p>
+            </div>
+            <div class="md:w-1/2 mt-6 md:mt-0 md:pl-8">
+                <img src="static/images/me.jpg" alt="Riley Carlson Hero Image"
+                    class="w-full max-w-sm mx-auto rounded-lg shadow-lg">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <!-- Work Experience -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold text-white mb-6">Work Experience</h2>
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                <div class="flex flex-wrap border-b border-gray-700">
+                    <button class="tab-button px-4 py-2 text-gray-300 font-medium focus:outline-none active-tab"
+                        onclick="openTab('job1')">KSB GIW Inc.</button>
+                    <button class="tab-button px-4 py-2 text-gray-300 font-medium focus:outline-none"
+                        onclick="openTab('job2')">Total Systems (Audit Automation Intern)</button>
+                    <button class="tab-button px-4 py-2 text-gray-300 font-medium focus:outline-none"
+                        onclick="openTab('job3')">Total Systems (Systems Reporting Intern)</button>
+                </div>
+                <div id="job1" class="tab active p-4">
+                    <h3 class="text-xl font-semibold text-white">Engineering Design Software Developer II - KSB GIW Inc.
+                    </h3>
+                    <p class="text-gray-400">Sept 2020 - Present</p>
+                    <ul class="list-disc list-inside text-gray-300 mt-2">
+                        <li>Developed, supported, and maintained internal tooling to assist engineers in the design and
+                            sale of slurry pumps.</li>
+                        <li><strong>SLYSEL:</strong> Performed fluid mechanics calculations to predict slurry pump
+                            performance.</li>
+                        <li><strong>TestBay:</strong> Replaced a legacy Fortran CLI tool with a modern desktop
+                            interface, monitoring live slurry pump testing and providing statistics and charts for
+                            operators and customer witnesses.</li>
+                        <li><strong>R&D HPC:</strong> Worked with researchers and engineers to advance understanding of
+                            slurry fluid dynamics, providing orchestration scripts to spawn and monitor simulation tasks
+                            and process generated data.</li>
+                    </ul>
+                </div>
+                <div id="job2" class="tab p-4">
+                    <h3 class="text-xl font-semibold text-white">Audit Automation Intern - Total Systems (TSYS)</h3>
+                    <p class="text-gray-400">May 2019 - August 2019</p>
+                    <ul class="list-disc list-inside text-gray-300 mt-2">
+                        <li>Developed a C# tool to automate PII removal from financial documents, using a bespoke PDF
+                            reader/writer and OCR for efficient document preparation for federal examiners.</li>
+                        <li>Developed an automated Excel report to track auditor hours, resulting in annual time savings
+                            of over 400 man-hours.</li>
+                        <li>Designed a versatile tool for batch converting Word, Excel, and PowerPoint documents to PDF
+                            with customizable watermarks, streamlining document processing.</li>
+                    </ul>
+                </div>
+                <div id="job3" class="tab p-4">
+                    <h3 class="text-xl font-semibold text-white">Systems Reporting Intern - Total Systems (TSYS)</h3>
+                    <p class="text-gray-400">May 2018 - August 2018</p>
+                    <ul class="list-disc list-inside text-gray-300 mt-2">
+                        <li>Produced SQL reports for management to assess department performance, utilizing SQL Server
+                            Management Studio and Microsoft Report Builder in Agile development cycles for both
+                            development and production environments.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Projects -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold text-white mb-6">Personal Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card bg-gray-800 rounded-lg shadow-lg p-6">
+                    <img src="static/images/projects/homelab.png" alt="Homelab"
+                        class="w-full h-40 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-white">Homelab</h3>
+                    <p class="text-gray-400">Running a homelab with Proxmox as a hypervisor, hosting web services like
+                        Jellyfin and Kavita, and supporting services like TrueNAS.</p>
+                </div>
+                <div class="card bg-gray-800 rounded-lg shadow-lg p-6">
+                    <img src="static/images/projects/sha.png" alt="SHA Implementation"
+                        class="w-full h-40 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-white">SHA Implementation</h3>
+                    <p class="text-gray-400">An educational project to better understand Secure Hash Algorithm (SHA)
+                        using F#.</p>
+                    <a href="https://github.com/rccarlson/SHA"
+                        class="text-blue-400 hover:underline mt-2 inline-block">GitHub</a>
+                </div>
+                <div class="card bg-gray-800 rounded-lg shadow-lg p-6">
+                    <img src="static/images/projects/skyrim.png" alt="Skyrim Alchemy Calculator"
+                        class="w-full h-40 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-white">Skyrim Alchemy Calculator</h3>
+                    <p class="text-gray-400">A C# project to learn Windows Forms, built before learning WPF and proper
+                        Git versioning.</p>
+                    <a href="https://github.com/rccarlson/Skyrim-Alchemy-Advisor"
+                        class="text-blue-400 hover:underline mt-2 inline-block">GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold text-white mb-6">Skills</h2>
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                <ul class="list-disc list-inside text-gray-300 text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2">
+                    <li>C#</li>
+                    <li>F#</li>
+                    <li>SQL</li>
+                    <li>Sqlite</li>
+                    <li>Fortran</li>
+                    <li>Caddy</li>
+                    <li>Proxmox</li>
+                    <li>Linux Mint</li>
+                    <li>Ubuntu Server</li>
+                    <li>Local LLMs</li>
+                    <li>Self Hosting</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold text-white mb-6">Achievements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold text-white">Eagle Scout</h3>
+                    <p class="text-gray-400">Achieved the rank of Eagle Scout in 2014 and led Troop 777 as a Senior
+                        Patrol Leader.</p>
+                </div>
+                <div class="card bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold text-white">LinkedIn Skill Assessments</h3>
+                    <p class="text-gray-400">Achieved top 5% for LinkedIn Skill Assessments for C# and .NET Framework.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold text-white mb-6">Education</h2>
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-white">Bachelor of Science in Engineering (B.S.E), Computer
+                    Engineering</h3>
+                <p class="text-gray-400">Mercer University, 2016 - 2020</p>
+                <h3 class="text-xl font-semibold text-white mt-4">High School</h3>
+                <p class="text-gray-400">Columbus High School, 2012 - 2016</p>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold text-white mb-6">Contact Me</h2>
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+            <form action="https://formspree.io/f/xvgrknlw" method="POST" class="space-y-4">
+                <div>
+                <label for="email" class="block text-gray-300">Your Email Address</label>
+                <input type="email" id="email" name="email"
+                    class="w-full bg-gray-700 text-white rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                </div>
+                <div>
+                <label for="subject" class="block text-gray-300">Subject</label>
+                <input type="text" id="subject" name="subject"
+                    class="w-full bg-gray-700 text-white rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                </div>
+                <div>
+                <label for="message" class="block text-gray-300">Your Message</label>
+                <textarea id="message" name="message"
+                    class="w-full bg-gray-700 text-white rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    rows="5" required></textarea>
+                </div>
+                <button type="submit"
+                class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Send</button>
+            </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-4 text-center text-gray-400">
+        <p>© <span id="year"></span> Riley Carlson</p>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+
+    <script>
+        function openTab(tabName) {
+            const tabs = document.getElementsByClassName('tab');
+            const buttons = document.getElementsByClassName('tab-button');
+
+            for (let tab of tabs) {
+                tab.classList.remove('active');
+            }
+            for (let button of buttons) {
+                button.classList.remove('active-tab');
+            }
+
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active-tab');
+        }
+    </script>
+</body>
+
+</html>
